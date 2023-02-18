@@ -15,7 +15,7 @@ const ModalOverlay = (props) => {
 
      console.log(cartCtx.items);
      const onRemoveItem =()=>{
-            alert('are you sure?')
+
     }
 
   return (
