@@ -35,7 +35,6 @@ const CartReducer = (state, action) => {
             //remove from cart
             updatedState.items = state.items.filter((item) => item.id !== action.id);
         }
-
         return updatedState;
     }
 
