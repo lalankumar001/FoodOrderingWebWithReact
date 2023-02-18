@@ -3,7 +3,7 @@ import styles from "./HeaderCartBtn.module.css";
 
 const HeaderCartBtn = (props) => {
   return (
-    <div className={styles.button}>
+    <div className={styles.button} onClick={props.onClick}>
       <span className={styles["icon"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ const HeaderCartBtn = (props) => {
       </span>
 
       <span>Your Cart</span>
-      <span className={styles["badge"]}>3</span>
+      <span className={styles["badge"]}>0</span>
     </div>
   );
 };

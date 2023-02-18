@@ -3,12 +3,12 @@ import mealsImg from '../../Assets/meals.jpg'
 import CartBtn from './HeaderCartBtn'
 import styles from './Header.module.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div>
         <header className={styles.header}>
            <h1>Delicious Food</h1>
-           <h3><CartBtn /></h3> 
+           <h3><CartBtn  onClick={props.onShowCart} /></h3> 
         </header>
         <div className={styles['main-image']}>
             <img src={mealsImg}  alt="Img of meals on the table"/>

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../../../store/CartContext";
 import Input from "../../UI/Input";
 import styles from "./MealitemForum.module.css";
 
-const MealitemForum = () => {
+const MealitemForum = (props) => {
+  const cartCtx = useContext(CartContext);
+  const onAddItem =(event)=>{
+   event.preventDefault();
+    cartCtx.addItem(props.meal);
+  }
   return (
     <div>
       <form className={styles.form}>
@@ -18,7 +24,7 @@ const MealitemForum = () => {
             defaultValue: '1',
           }}
         />
-        <button>+ Add</button>
+        <button onClick={onAddItem}>+ Add</button>
       </form>
     </div>
   );
