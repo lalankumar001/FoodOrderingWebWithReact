@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../../store/CartContext";
 import styles from "./HeaderCartBtn.module.css";
 
 const HeaderCartBtn = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  let qty = 0;
+  cartCtx.items.forEach((item) => {
+    qty += Number(item.quantity);
+  });
+
   return (
     <div className={styles.button} onClick={props.onClick}>
       <span className={styles["icon"]}>
@@ -15,7 +23,7 @@ const HeaderCartBtn = (props) => {
       </span>
 
       <span>Your Cart</span>
-      <span className={styles["badge"]}>0</span>
+      <span className={styles["badge"]}>{qty}</span>
     </div>
   );
 };
